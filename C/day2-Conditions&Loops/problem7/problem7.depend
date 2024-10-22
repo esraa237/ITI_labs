@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1729089327 source:g:\iti labs\c\day 2\problem7\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1729090426 source:g:\iti labs\c\day2-conditions&loops\problem7\main.c
+	<stdio.h>
+	<stdlib.h>
+
