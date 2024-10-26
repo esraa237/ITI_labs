@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1729343473 source:g:\iti labs\c\day4-strings\problem 2 v2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+	<string.h>
+

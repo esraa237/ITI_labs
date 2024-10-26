@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1729322005 source:g:\iti labs\c\day4-strings\problem1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
