@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1729625987 source:g:\iti labs\c\day5-pointers\problem6\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+	<string.h>
+
