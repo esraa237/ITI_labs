@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1730559025 source:g:\iti labs\c\book_excersices\chapter3-loops\12.fractiocalculator\main.c
+	<stdio.h>
+	<stdlib.h>
+

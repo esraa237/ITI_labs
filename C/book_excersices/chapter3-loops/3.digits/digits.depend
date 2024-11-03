@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1730399324 source:g:\iti labs\c\book_excersices\chapter3-loops\digits\main.c
+	<stdio.h>
+	<stdlib.h>
+

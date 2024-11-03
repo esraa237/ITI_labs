@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1730470677 source:g:\iti labs\c\book_excersices\chapter3-loops\10.reverse_money\main.c
+	<stdio.h>
+	<stdlib.h>
+
