@@ -16,7 +16,6 @@ int main()
     float result;
     char op,flag='y';
     while(flag=='y'){
-
         printf("Enter the first fraction: ");
         scanf("%f/%f",&a,&b);
         printf("Enter the operator(*/+-): ");
