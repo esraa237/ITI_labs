@@ -51,6 +51,7 @@ void DisplayByID(struct emp* ptr,long int size){
         }
 }
 void DisplayByName(struct emp* ptr,long int size){
+    int name_available=0;
       char name[15];
       printf("Enter name: ");
       scanf("%s",name);
