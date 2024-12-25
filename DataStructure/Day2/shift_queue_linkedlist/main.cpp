@@ -32,7 +32,7 @@ public:
             tail=temp;
         }
     }
-    int dequeue(){
+    void dequeue(){
         if(head!=NULL){
             node* temp=head;
             head=head->next;
