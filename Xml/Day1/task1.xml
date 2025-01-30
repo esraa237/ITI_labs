@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="G:\ITI Labs\Xml\Day3\task3.xsd">
+	<Location>
+		<Country>Egypt</Country>
+		<Governorate>Cairo</Governorate>
+		<City>Nasr City</City>
+		<Street>123 Library Street</Street>
+	</Location>
+	<Description><![CDATA[(This library offers a wide variety of books in different genres and provides a quiet study environment. & have many books)]]></Description>
+	<Librarian name="Omar Hassan" phone="+201234567890"/>
+	<books>
+		<!-- First Book -->
+		<book ISBN="A1" Author="Taha Hussein" title="the days">
+			<Preface><![CDATA[An autobiography by Taha Hussein & detailing his life journey from childhood to adulthood.]]></Preface>
+			<parts>
+				<part title="Childhood">
+					<chapters>
+						<chapter title="The Beginning">
+							<summary>Taha Hussein’s childhood and upbringing in a small Egyptian village.</summary>
+							<sections>
+								<section>
+									<content>Taha Hussein reflects on his early life, his village memories, and his love for learning from a young age</content>
+									<content>Taha Hussein reflects on his early life, his village memories, and his love for learning from a young age.</content>
+									<content>Taha Hussein reflects on his early life, his village memories, and his love for learning from a young age</content>
+								</section>
+								<section>
+									<content>Details of Taha Hussein losing his sight and how it shaped his character and resilience.</content>
+								</section>
+							</sections>
+						</chapter>
+						<chapter title="The Quest for Knowledge">
+							<summary>The beginning of Taha Hussein’s educational journey and his move to Cairo.</summary>
+							<sections>
+								<section>
+									<content>Attending Al-Azhar University was a pivotal chapter in Taha Hussein’s life.</content>
+								</section>
+								<section>
+									<content>How Taha Hussein moved from traditional education to attending the modern university.</content>
+								</section>
+							</sections>
+						</chapter>
+					</chapters>
+				</part>
+			</parts>
+		</book>
+		<!--second book-->
+		<book ISBN="A2" Author="Taha Hussein" title="the days">
+			<Preface><![CDATA[An autobiography by Taha Hussein & detailing his life journey from childhood to adulthood.]]></Preface>
+			<parts>
+				<part title="Childhood">
+					<chapters>
+						<chapter title="The Beginning">
+							<summary>Taha Hussein’s childhood and upbringing in a small Egyptian village.</summary>
+							<sections>
+								<section>
+									<content>Taha Hussein reflects on his early life, his village memories, and his love for learning from a young age</content>
+									<content>Taha Hussein reflects on his early life, his village memories, and his love for learning from a young age.</content>
+									<content>Taha Hussein reflects on his early life, his village memories, and his love for learning from a young age</content>
+								</section>
+								<section>
+									<content>Details of Taha Hussein losing his sight and how it shaped his character and resilience.</content>
+								</section>
+							</sections>
+						</chapter>
+						<chapter title="The Quest for Knowledge">
+							<summary>The beginning of Taha Hussein’s educational journey and his move to Cairo.</summary>
+							<sections>
+								<section>
+									<content>Attending Al-Azhar University was a pivotal chapter in Taha Hussein’s life.</content>
+								</section>
+								<section>
+									<content>How Taha Hussein moved from traditional education to attending the modern university.</content>
+								</section>
+							</sections>
+						</chapter>
+					</chapters>
+				</part>
+			</parts>
+		</book>
+	</books>
+</library>
