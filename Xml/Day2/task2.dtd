@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT library ( Location , Description , Librarian , books)>
+
+<!ELEMENT Location (Country,Governorate,City,Street)>
+<!ELEMENT Country (#PCDATA)>
+<!ELEMENT Governorate (#PCDATA)>
+<!ELEMENT City (#PCDATA)>
+<!ELEMENT Street (#PCDATA)>
+
+<!ELEMENT Description (#PCDATA)>
+
+<!ELEMENT Librarian EMPTY>
+<!ATTLIST Librarian name CDATA #REQUIRED  
+                               phone CDATA #REQUIRED>
+
+<!ELEMENT books (book+)>
+<!ELEMENT book (Preface, parts)>
+<!ATTLIST book ISBN ID #REQUIRED
+                        Author CDATA #REQUIRED 
+                        title CDATA #REQUIRED>
+<!ELEMENT Preface (#PCDATA)>
+
+<!ELEMENT parts (part+)>
+<!ELEMENT part (chapters)>
+<!ATTLIST part title CDATA #REQUIRED>
+
+<!ELEMENT chapters (chapter+)>
+<!ELEMENT chapter (summary?, sections)>
+<!ATTLIST chapter title CDATA #IMPLIED>
+<!ELEMENT summary (#PCDATA)>
+<!ELEMENT sections (section+)>
+<!ELEMENT section (content+)>
+<!ELEMENT content (#PCDATA)>
