@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="library">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Location">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Country" type="xs:string"/>
+							<xs:element name="Governorate" type="xs:string"/>
+							<xs:element name="City" type="xs:string"/>
+							<xs:element name="Street" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Description" type="xs:string"/>
+				<xs:element name="Librarian">
+					<xs:complexType>
+						<xs:attribute name="name" type="xs:string"/>
+						<xs:attribute name="phone" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="books">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="book" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Preface" type="xs:string"/>
+										<xs:element name="parts">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="part" minOccurs="1" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="chapters">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="chapter" minOccurs="1" maxOccurs="unbounded">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="summary" type="xs:string"/>
+																						<xs:element name="sections">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="section" minOccurs="1" maxOccurs="unbounded">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element name="content" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																					<xs:attribute name="title" type="xs:string" use="optional"/>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="title" type="xs:string" use="required"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="ISBN" type="xs:ID" use="required"/>
+									<xs:attribute name="Author" type="xs:string" use="required"/>
+									<xs:attribute name="title" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
