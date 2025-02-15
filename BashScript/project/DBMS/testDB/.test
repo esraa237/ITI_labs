@@ -1,0 +1,6 @@
+Field|Type|key
+id|INT|PK
+name|TEXT|
+read|TEXT|
+age|INT|
+text|TEXT|
