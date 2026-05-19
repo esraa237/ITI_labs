@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>QuickSort Demo</title>
+    <style>
+        /* Internal CSS starts here */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f6fb;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            max-width: 420px;
+            margin: 60px auto;
+            padding: 32px 28px 24px 28px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #2d3a4b;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        label {
+            color: #3a4a5d;
+            font-size: 1rem;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #bfc9d9;
+            border-radius: 6px;
+            box-sizing: border-box;
+            transition: border 0.2s;
+        }
+
+        input[type="text"]:focus {
+            border: 1.5px solid #4f8cff;
+            outline: none;
+        }
+
+        button {
+            background: #4f8cff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 22px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background: #2563eb;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #2563eb;
+            background: #eaf1ff;
+            padding: 10px 14px;
+            border-radius: 6px;
+            min-height: 28px;
+            word-break: break-all;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>QuickSort Demo</h2>
+        <label for="numbers">Enter numbers (comma separated):</label>
+        <input type="text" id="numbers" placeholder="e.g. 5,3,8,1,2">
+        <button onclick="sortNumbers()">Sort</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function quickSort(arr) {
+            if (arr.length <= 1) return arr;
+            const pivot = arr[arr.length - 1];
+            const left = [];
+            const right = [];
+            for (let i = 0; i < arr.length - 1; i++) {
+                if (arr[i] < pivot) left.push(arr[i]);
+                else right.push(arr[i]);
+            }
+            return [...quickSort(left), pivot, ...quickSort(right)];
+        }
+
+        function sortNumbers() {
+            const input = document.getElementById('numbers').value;
+            const resultDiv = document.getElementById('result');
+
+            // Trim input and check for empty
+            if (!input.trim()) {
+                resultDiv.style.color = "#e11d48";
+                resultDiv.style.background = "#fff0f3";
+                resultDiv.textContent = "Input cannot be empty.";
+                return;
+            }
+
+            // Check for invalid characters (allow digits, commas, spaces, minus, dot)
+            if (!/^[\d\s,.\-]+$/.test(input)) {
+                resultDiv.style.color = "#e11d48";
+                resultDiv.style.background = "#fff0f3";
+                resultDiv.textContent = "Input contains invalid characters.";
+                return;
+            }
+
+            // Split and parse numbers
+            const arr = input.split(',')
+                .map(num => num.trim())
+                .filter(num => num.length > 0)
+                .map(num => parseFloat(num))
+                .filter(n => !isNaN(n));
+
+            // Check for empty after filtering
+            if (arr.length === 0) {
+                resultDiv.style.color = "#e11d48";
+                resultDiv.style.background = "#fff0f3";
+                resultDiv.textContent = "Please enter valid numbers.";
+                return;
+            }
+
+            // Check for NaN or invalid numbers (e.g., double commas)
+            if (arr.some(n => !isFinite(n))) {
+                resultDiv.style.color = "#e11d48";
+                resultDiv.style.background = "#fff0f3";
+                resultDiv.textContent = "Input contains invalid or infinite numbers.";
+                return;
+            }
+
+            // Check for too many numbers
+            if (arr.length > 1000) {
+                resultDiv.style.color = "#e11d48";
+                resultDiv.style.background = "#fff0f3";
+                resultDiv.textContent = "Too many numbers. Please enter 1000 or fewer.";
+                return;
+            }
+
+            // Check for all numbers are the same
+            if (arr.every(n => n === arr[0])) {
+                resultDiv.style.color = "#eab308";
+                resultDiv.style.background = "#fef9c3";
+                resultDiv.textContent = "All numbers are the same: " + arr[0];
+                return;
+            }
+
+            // Check for negative numbers (optional, remove if negatives are allowed)
+            // if (arr.some(n => n < 0)) {
+            //     resultDiv.style.color = "#e11d48";
+            //     resultDiv.style.background = "#fff0f3";
+            //     resultDiv.textContent = "Negative numbers are not allowed.";
+            //     return;
+            // }
+
+            const sorted = quickSort(arr);
+            resultDiv.style.color = "#2563eb";
+            resultDiv.style.background = "#eaf1ff";
+            resultDiv.textContent = "Sorted: " + sorted.join(', ');
+        }
+    </script>
+</body>
+
+</html>
